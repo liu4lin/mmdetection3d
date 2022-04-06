@@ -30,4 +30,7 @@ RUN pip config set global.index-url http://mirrors.aliyun.com/pypi/simple
 RUN pip config set global.trusted-host mirrors.aliyun.com
 
 RUN pip install -r requirements/build.txt
-RUN pip install --no-cache-dir -e .
+
+RUN pip install cython
+RUN python setup.py develop
+# RUN pip install --no-cache-dir -e .
